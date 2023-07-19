@@ -129,7 +129,7 @@ resource "aws_instance" "Prod-Server" {
  ami = "ami-053b0d53c279acc90"
  instance_type = "t2.micro"
  availability_zone = "us-east-1a"
- key_name = "rohan"
+ key_name = "mujahed.pub"
  network_interface {
  device_index = 0
  network_interface_id = aws_network_interface.proj-ni.id
@@ -139,7 +139,7 @@ resource "aws_instance" "Prod-Server" {
      sudo apt-get update -y
      sudo apt install docker.io -y
      sudo systemctl enable docker
-     sudo docker run -itd -p 8086:8081 rohanraparthi/banking:1.0
+     sudo docker run -itd -p 8085:8081 surajshende123/banking:2.0
      sudo docker start $(docker ps -aq)
      sudo docker run -itd -p 9100:9100 prom/node-exporter
  EOF
